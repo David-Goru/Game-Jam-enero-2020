@@ -110,7 +110,7 @@ NavMeshSettings:
     agentSlope: 45
     agentClimb: 0.4
     ledgeDropHeight: 0
-    maxJumpAcrossDistance: 0
+    maxJumpAcrossDistance: 10
     minRegionArea: 2
     manualCellSize: 0
     cellSize: 0.16666667
@@ -119,7 +119,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 91f51c38a7e720e4abbf6f384435c5a5, type: 2}
 --- !u!1 &23860577
 GameObject:
   m_ObjectHideFlags: 0
@@ -888,8 +888,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: Add
+      - m_Target: {fileID: 1446258726}
+        m_MethodName: 
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1121,8 +1121,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: Add
+      - m_Target: {fileID: 1446258726}
+        m_MethodName: 
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6935,8 +6935,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: Add
+      - m_Target: {fileID: 1446258726}
+        m_MethodName: 
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7076,6 +7076,7 @@ GameObject:
   - component: {fileID: 1375187274}
   - component: {fileID: 1375187273}
   - component: {fileID: 1375187272}
+  - component: {fileID: 1375187275}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -7141,13 +7142,27 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1375187271}
-  m_LocalRotation: {x: 0.5, y: 0, z: 0, w: 0.8660254}
-  m_LocalPosition: {x: 4, y: 7, z: -4}
+  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
+  m_LocalPosition: {x: 0, y: 8.5, z: -7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 60, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
+--- !u!114 &1375187275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375187271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bb4f73748081d549a2f9b6fa39d0c53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 4732854723980639837}
+  smoothing: 5
 --- !u!1 &1378243292
 GameObject:
   m_ObjectHideFlags: 0
@@ -7238,6 +7253,7 @@ GameObject:
   - component: {fileID: 1446258727}
   - component: {fileID: 1446258729}
   - component: {fileID: 1446258728}
+  - component: {fileID: 1446258730}
   m_Layer: 5
   m_Name: Upgrades
   m_TagString: Untagged
@@ -7307,6 +7323,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1446258726}
   m_CullTransparentMesh: 0
+--- !u!114 &1446258730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446258726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adf6ca9cd0b7ebf4ca7d66cc2cc30029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1515399156
 GameObject:
   m_ObjectHideFlags: 0
@@ -8262,7 +8290,6 @@ GameObject:
   - component: {fileID: 4732854723980639837}
   - component: {fileID: 2814320692657264860}
   - component: {fileID: 2814320692657264863}
-  - component: {fileID: 2814320692657264861}
   - component: {fileID: 2814320692657264838}
   - component: {fileID: 2814320692657264837}
   - component: {fileID: 2814320692657264836}
@@ -8334,20 +8361,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2814320692657264861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2814320692657264835}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f22c8b89504ecc64d9dca5fe4356332b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 2814320692657264860}
-  Stats: {fileID: 11400000, guid: 99d4915f435f255438ae460c8e24aac9, type: 2}
 --- !u!65 &2814320692657264863
 BoxCollider:
   m_ObjectHideFlags: 0
