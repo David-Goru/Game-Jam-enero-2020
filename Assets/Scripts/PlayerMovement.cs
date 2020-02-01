@@ -5,12 +5,20 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public PlayerStats Stats;
+    Animator animator;
+
+    void Start()
+    {
+        animator = gameObject.GetComponent<Animator>();
+    }
 
     void Update()
     {
         // Position
         Vector3 translate = new Vector3(Input.GetAxis("Horizontal") * Stats.Speed, 0, Input.GetAxis("Vertical") * Stats.Speed);
         transform.Translate(translate * Stats.Speed * Time.deltaTime);
+
+        animator.SetBool("isWalking", translate.x > 0 || translate.z > 0);
 
         // Rotation
         RaycastHit hit;

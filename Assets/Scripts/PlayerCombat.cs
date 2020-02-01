@@ -40,10 +40,15 @@ public class PlayerCombat : MonoBehaviour
 
         foreach (Collider enemy in enemies)
         {
-            //(enemy.gameObject.GetComponent("EnemyController") as EnemyController).DoDamage(Stats.Damage);
+            (enemy.gameObject.GetComponent("NPCmovement") as NPCmovement).GetDamage(Stats.Damage);
             Instantiate(BloodParticles, enemy.transform.Find("Blood spawn").position, enemy.transform.rotation);
-            enemy.gameObject.GetComponent<Rigidbody>().AddForce(enemy.transform.Find("Back point").position * 3, ForceMode.Impulse);
+            enemy.gameObject.GetComponent<Rigidbody>().AddForce(enemy.transform.Find("Back point").position * 10, ForceMode.Impulse);
         }
         attackTimer = 0.5f;
+    }
+
+    public void GetDamage(int damage)
+    {
+
     }
 }

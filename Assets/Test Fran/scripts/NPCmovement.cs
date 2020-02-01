@@ -25,7 +25,7 @@ public class NPCmovement : MonoBehaviour
         }
 
         goPlayer = GameObject.FindWithTag("Player");
-        Debug.Log("player: " + goPlayer.tag);
+        //Debug.Log("player: " + goPlayer.tag);
 
 
     }
@@ -70,5 +70,8 @@ public class NPCmovement : MonoBehaviour
 
     }
 
+    public void GetDamage(int damage)
+    {
 
+    }
 }
