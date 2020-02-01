@@ -18,7 +18,6 @@ public class animatorFran : MonoBehaviour
         transform.Translate(translate * Stats.Speed * Time.deltaTime);
 
         walk = Mathf.Abs(translate.x) + Mathf.Abs(translate.z);
-        //Debug.Log("movimiento xD: "+translate);
         AnimatorPlayer();
     }
     void AnimatorPlayer()
