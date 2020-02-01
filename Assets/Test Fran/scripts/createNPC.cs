@@ -7,6 +7,8 @@ public class createNPC : MonoBehaviour
     public GameObject[] enemyList;
     public GameObject prefab;
     public bool time;
+    public int numEnemies;
+    int contEnemies;
 
     int random;
     Transform randomPosition;
@@ -26,9 +28,10 @@ public class createNPC : MonoBehaviour
     void Update()
     {
 
-        if (time)
+        if (time && contEnemies < numEnemies)
         {
             StartCoroutine(Enemy());
+            contEnemies += 1;
         }
 
     }

@@ -5,12 +5,16 @@ using UnityEngine.AI;
 
 public class NPCmovement : MonoBehaviour
 {
+    public Animator animator;
     NavMeshAgent navMeshAgent;
 
     GameObject goPlayer;
     Transform destination;
 
-    
+    float variableX;
+    float variableZ;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,8 +35,29 @@ public class NPCmovement : MonoBehaviour
     {
         destination = goPlayer.transform;
 
+        CheckDistance();
         SetDestination();
+    }
 
+    void CheckDistance()
+    {
+        //Debug.Log("distancia X: " + (goPlayer.transform.position.x - transform.position.x));
+        //Debug.Log("distancia Z: " + (goPlayer.transform.position.z - transform.position.z));
+
+        variableX = goPlayer.transform.position.x - transform.position.x;
+        variableX = Mathf.Abs(variableX);
+
+        variableZ = goPlayer.transform.position.z - transform.position.z;
+        variableZ = Mathf.Abs(variableZ);
+
+        if (variableX <= 2.5f && variableZ <= 2.5f)
+        {
+            animator.SetBool("bool_attack", true);
+        }
+        else
+        {
+            animator.SetBool("bool_attack", false);
+        }
     }
 
     void SetDestination()
