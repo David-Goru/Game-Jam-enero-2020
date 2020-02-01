@@ -15,10 +15,9 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         // Position
-        Vector3 translate = new Vector3(Input.GetAxis("Horizontal") * Stats.Speed, 0, Input.GetAxis("Vertical") * Stats.Speed);
-        transform.Translate(translate * Stats.Speed * Time.deltaTime);
+        transform.position = new Vector3(transform.position.x + Input.GetAxis("Horizontal") * Stats.Speed *  Time.deltaTime, 0, transform.position.z + Input.GetAxis("Vertical") * Stats.Speed * Time.deltaTime);
 
-        animator.SetBool("isWalking", translate.x > 0 || translate.z > 0);
+        animator.SetBool("isWalking", Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0);
 
         // Rotation
         RaycastHit hit;
@@ -29,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
             Vector3 hitPoint = new Vector3(hit.point.x, 0, hit.point.z);
             if (Vector3.Distance(hitPoint, transform.position) > 0.1)
             {
-                transform.Find("Model").LookAt(hitPoint);
+                transform.Find("Model").LookAt(new Vector3(hitPoint.x, transform.Find("Model").position.y, hitPoint.z));
                 transform.Find("Model").Find("Head").LookAt(hitPoint);
             }
         }

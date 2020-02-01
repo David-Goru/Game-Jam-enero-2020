@@ -5,6 +5,10 @@ using UnityEngine.AI;
 
 public class NPCmovement : MonoBehaviour
 {
+    //PlayerStats stats;
+    public PlayerCombat playerCombat;
+    public createNPC createNPC;
+
     public Animator animator;
     NavMeshAgent navMeshAgent;
 
@@ -14,10 +18,16 @@ public class NPCmovement : MonoBehaviour
     float variableX;
     float variableZ;
 
+    bool damage;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        damage = false;
+        playerCombat = GameObject.Find("Player").GetComponent<PlayerCombat>();
+        createNPC = GameObject.Find("Floor").GetComponent<createNPC>();
+
         navMeshAgent = this.GetComponent<NavMeshAgent>();
         if (navMeshAgent == null)
         {
@@ -53,6 +63,7 @@ public class NPCmovement : MonoBehaviour
         if (variableX <= 2.5f && variableZ <= 2.5f)
         {
             animator.SetBool("bool_attack", true);
+            StartCoroutine(TimeBetweenDamage());
         }
         else
         {
@@ -73,5 +84,33 @@ public class NPCmovement : MonoBehaviour
     public void GetDamage(int damage)
     {
 
+        /*
+        Stats.HP -= damage;
+
+        if (Stats.HP <= 0)
+        {
+            this.gameObject.SetActive(false);
+            Debug.Log("hola");
+        }
+         */
+        createNPC.DestroyEnemy(1);
+        Destroy(this.gameObject);
+
     }
+
+
+    IEnumerator TimeBetweenDamage()
+    {
+
+        if (damage == false)
+        {
+            playerCombat.GetDamage(2);
+            damage = true;
+        }
+
+        yield return new WaitForSeconds(100);
+
+        damage = false;
+    }
+
 }

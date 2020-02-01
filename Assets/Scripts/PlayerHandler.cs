@@ -8,16 +8,25 @@ public class PlayerHandler : MonoBehaviour
     public PlayerStats Stats;
     public GameObject UpgradeUI;
 
+    public int gold;
+    public float speed;
+    public int damage;
+    public int damageCost;
+    public int armor;
+    public int armorCost;
+    public int hp;
+    public int hpCost;
+
     void Start()
     {
-        Stats.Gold = 100;
-        Stats.Speed = 2f;
-        Stats.Damage = 0;
-        Stats.DamageCost = 0;
-        Stats.Armor = 0;
-        Stats.ArmorCost = 0;
-        Stats.HP = 0;
-        Stats.HPCost = 0;
+        Stats.Gold = gold;
+        Stats.Speed = speed;
+        Stats.Damage = damage;
+        Stats.DamageCost = damageCost;
+        Stats.Armor = armor;
+        Stats.ArmorCost = armorCost;
+        Stats.HP = hp;
+        Stats.HPCost = hpCost;
     }
 
     public void Add(string type)

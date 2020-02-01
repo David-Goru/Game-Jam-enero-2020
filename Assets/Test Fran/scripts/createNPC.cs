@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class createNPC : MonoBehaviour
 {
+
     public GameObject[] enemyList;
+    [HideInInspector] public int contEnemies;
+
     public GameObject prefab;
     public bool time;
     public int numEnemies;
-    int contEnemies;
 
     int random;
     Transform randomPosition;
@@ -36,9 +38,9 @@ public class createNPC : MonoBehaviour
 
     }
 
-    void CreateEnemy()
+    public void DestroyEnemy(int num)
     {
-
+        contEnemies = contEnemies - 1;
     }
 
     IEnumerator Enemy()
