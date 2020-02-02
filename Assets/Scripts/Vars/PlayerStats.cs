@@ -8,9 +8,10 @@ public class PlayerStats : ScriptableObject
     // Stats
     public float Speed;
     public int Damage;
-    public int DamageCost;
     public int HP;
-    public int HPCost;
     public int Armor;
-    public int ArmorCost;
+
+    public int LevelDamage;
+    public int LevelHP;
+    public int LevelArmor;
 }
