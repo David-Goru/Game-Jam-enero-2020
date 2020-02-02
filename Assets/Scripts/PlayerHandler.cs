@@ -21,12 +21,13 @@ public class PlayerHandler : MonoBehaviour
     {
         Stats.Gold = gold;
         Stats.Speed = speed;
-        Stats.Damage = damage;
-        Stats.DamageCost = damageCost;
-        Stats.Armor = armor;
-        Stats.ArmorCost = armorCost;
-        Stats.HP = hp;
-        Stats.HPCost = hpCost;
+        Stats.Damage = 1;
+        Stats.Armor = 1;
+        Stats.HP = 5;
+
+        Stats.LevelDamage = 0;
+        Stats.LevelArmor = 0;
+        Stats.LevelHP = 0;
     }
 
     public void Add(string type)
@@ -34,30 +35,30 @@ public class PlayerHandler : MonoBehaviour
         switch (type)
         {
             case "Damage":
-                if (Stats.Gold >= Mathf.Pow(2, Stats.Damage))
+                if (Stats.Gold >= Mathf.Pow(2, Stats.LevelDamage))
                 {
-                    Stats.Gold -= (int)Mathf.Pow(2, Stats.Damage);
-                    Stats.Damage++;
-                    UpgradeUI.transform.Find("Upgrade damage").Find("Cost").GetComponent<Text>().text = string.Format("{0}g", (int)Mathf.Pow(2, Stats.Damage));
-                    UpgradeUI.transform.Find("Upgrade damage").Find("Points").GetComponent<Text>().text = string.Format("({0})", Stats.Damage);
+                    Stats.Gold -= (int)Mathf.Pow(2, Stats.LevelDamage);
+                    Stats.LevelDamage++;
+                    UpgradeUI.transform.Find("Upgrade damage").Find("Cost").GetComponent<Text>().text = string.Format("{0}g", (int)Mathf.Pow(2, Stats.LevelDamage));
+                    UpgradeUI.transform.Find("Upgrade damage").Find("Points").GetComponent<Text>().text = string.Format("({0})", Stats.LevelDamage);
                 }
                 break;
             case "HP":
-                if (Stats.Gold >= Mathf.Pow(2, Stats.HP))
+                if (Stats.Gold >= Mathf.Pow(2, Stats.LevelHP))
                 {
-                    Stats.Gold -= (int)Mathf.Pow(2, Stats.HP);
-                    Stats.HP++;
-                    UpgradeUI.transform.Find("Upgrade HP").Find("Cost").GetComponent<Text>().text = string.Format("{0}g", (int)Mathf.Pow(2, Stats.HP));
-                    UpgradeUI.transform.Find("Upgrade HP").Find("Points").GetComponent<Text>().text = string.Format("({0})", Stats.HP);
+                    Stats.Gold -= (int)Mathf.Pow(2, Stats.LevelHP);
+                    Stats.LevelHP++;
+                    UpgradeUI.transform.Find("Upgrade HP").Find("Cost").GetComponent<Text>().text = string.Format("{0}g", (int)Mathf.Pow(2, Stats.LevelHP));
+                    UpgradeUI.transform.Find("Upgrade HP").Find("Points").GetComponent<Text>().text = string.Format("({0})", Stats.LevelHP);
                 }
                 break;
             case "Armor":
-                if (Stats.Gold >= Mathf.Pow(2, Stats.Armor))
+                if (Stats.Gold >= Mathf.Pow(2, Stats.LevelArmor))
                 {
-                    Stats.Gold -= (int)Mathf.Pow(2, Stats.Armor);
-                    Stats.Armor++;
-                    UpgradeUI.transform.Find("Upgrade armor").Find("Cost").GetComponent<Text>().text = string.Format("{0}g", (int)Mathf.Pow(2, Stats.Armor));
-                    UpgradeUI.transform.Find("Upgrade armor").Find("Points").GetComponent<Text>().text = string.Format("({0})", Stats.Armor);
+                    Stats.Gold -= (int)Mathf.Pow(2, Stats.LevelArmor);
+                    Stats.LevelArmor++;
+                    UpgradeUI.transform.Find("Upgrade armor").Find("Cost").GetComponent<Text>().text = string.Format("{0}g", (int)Mathf.Pow(2, Stats.LevelArmor));
+                    UpgradeUI.transform.Find("Upgrade armor").Find("Points").GetComponent<Text>().text = string.Format("({0})", Stats.LevelArmor);
                 }
                 break;
         }

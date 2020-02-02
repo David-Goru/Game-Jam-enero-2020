@@ -5,6 +5,8 @@ using UnityEngine;
 public class createNPC : MonoBehaviour
 {
 
+    public Restart restart;
+
     public GameObject[] enemyList;
     [HideInInspector] public int contEnemies;
 
@@ -17,9 +19,11 @@ public class createNPC : MonoBehaviour
 
     GameObject enemy;
 
+
     // Start is called before the first frame update
     void Start()
     {
+        contEnemies = 5;
         time = true;
 
         enemyList = GameObject.FindGameObjectsWithTag("Spawn");  //returns GameObject[]
@@ -40,7 +44,7 @@ public class createNPC : MonoBehaviour
 
     public void DestroyEnemy(int num)
     {
-        contEnemies = contEnemies - 1;
+        restart.rounds();
     }
 
     IEnumerator Enemy()

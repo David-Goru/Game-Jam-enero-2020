@@ -46,7 +46,7 @@ public class PlayerCombat : MonoBehaviour
 
     public void GetDamage(int damage)
     {
-        //Stats.HP -= damage;  //------------------------------------------------------------------------------------------------------- esto lo ajustamos cuando cuando metamos las animaciones buenas de los modelados
+        Stats.HP -= damage;  //------------------------------------------------------------------------------------------------------- esto lo ajustamos cuando cuando metamos las animaciones buenas de los modelados
 
         if (Stats.HP <= 0)
         {
