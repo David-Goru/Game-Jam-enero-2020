@@ -64,4 +64,16 @@ public class PlayerHandler : MonoBehaviour
 
         UpgradeUI.transform.parent.Find("Gold").GetComponent<Text>().text = string.Format("{0}g", Stats.Gold);
     }
+
+    public void MoreGold()
+    {
+        Stats.Gold += 10;
+    }
+
+    /*
+    public int AmountGold()
+    {
+        return Stats.Gold;
+    }*/
+
 }
