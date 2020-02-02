@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        //animator = gameObject.GetComponent<Animator>();
+        animator = gameObject.GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
         // Position
         transform.position = new Vector3(transform.position.x + Input.GetAxis("Horizontal") * Stats.Speed *  Time.deltaTime, 0, transform.position.z + Input.GetAxis("Vertical") * Stats.Speed * Time.deltaTime);
 
-        //animator.SetBool("isWalking", Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0);
+        animator.SetBool("isWalking", Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0);
 
         // Rotation
         RaycastHit hit;
