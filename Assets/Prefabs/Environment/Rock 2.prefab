@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 6697128336875815852}
   - component: {fileID: 4307012121101265115}
   - component: {fileID: 9086559369843942488}
+  - component: {fileID: 7539189953010851298}
   m_Layer: 0
   m_Name: Rock 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &6697128336875815852
 Transform:
@@ -78,3 +79,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &7539189953010851298
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6420695293574455822}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8975811, y: 1.2427729, z: 1.762773}
+  m_Center: {x: 0.008433491, y: 0.6208835, z: 0.035327494}

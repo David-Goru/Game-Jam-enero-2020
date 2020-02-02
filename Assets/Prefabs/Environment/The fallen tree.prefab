@@ -243,12 +243,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5006800044803725569}
+  - component: {fileID: 896616663746441280}
   m_Layer: 0
   m_Name: The fallen tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &5006800044803725569
 Transform:
@@ -268,6 +269,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &896616663746441280
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5994557162097478009}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.23, y: 0.28, z: 0.26}
+  m_Center: {x: 8.71, y: 3.58, z: -0.72}
 --- !u!1 &8293738339510359785
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,8 +297,8 @@ GameObject:
   m_Name: Big stick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &5939256426046455808
 Transform:
