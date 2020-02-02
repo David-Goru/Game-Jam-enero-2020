@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7526667104559805814}
   - component: {fileID: 7129462351967909453}
   - component: {fileID: 1770883607312149283}
-  - component: {fileID: 5902373785518545171}
   m_Layer: 0
   m_Name: Blue mushroom
   m_TagString: Untagged
@@ -80,19 +79,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &5902373785518545171
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1341718454836164966}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.732051, y: 2.058276, z: 1.999999}
-  m_Center: {x: -0.85184747, y: 0.981222, z: 2.4081955}
 --- !u!1 &5004429388390562814
 GameObject:
   m_ObjectHideFlags: 0

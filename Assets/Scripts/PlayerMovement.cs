@@ -9,15 +9,15 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        animator = gameObject.GetComponent<Animator>();
+        //animator = gameObject.GetComponent<Animator>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         // Position
         transform.position = new Vector3(transform.position.x + Input.GetAxis("Horizontal") * Stats.Speed *  Time.deltaTime, 0, transform.position.z + Input.GetAxis("Vertical") * Stats.Speed * Time.deltaTime);
 
-        animator.SetBool("isWalking", Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0);
+        //animator.SetBool("isWalking", Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0);
 
         // Rotation
         RaycastHit hit;
@@ -29,7 +29,6 @@ public class PlayerMovement : MonoBehaviour
             if (Vector3.Distance(hitPoint, transform.position) > 0.1)
             {
                 transform.Find("Model").LookAt(new Vector3(hitPoint.x, transform.Find("Model").position.y, hitPoint.z));
-                transform.Find("Model").Find("Head").LookAt(hitPoint);
             }
         }
     }
