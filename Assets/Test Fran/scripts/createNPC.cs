@@ -55,7 +55,11 @@ public class createNPC : MonoBehaviour
         random = Random.Range(0, 4);
         randomPosition = enemyList[random].transform;
 
+
+
         enemy = Instantiate(prefab, randomPosition );
+        enemy.transform.SetParent(null);
+        enemy.transform.localScale = new Vector3(1, 1, 1);
         
         time = true;
     }
