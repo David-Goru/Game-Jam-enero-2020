@@ -19,6 +19,7 @@ public class PlayerHandler : MonoBehaviour
 
     void Start()
     {
+        Stats.Round = 0;
         Stats.Gold = gold;
         Stats.Speed = speed;
         Stats.Damage = 1;

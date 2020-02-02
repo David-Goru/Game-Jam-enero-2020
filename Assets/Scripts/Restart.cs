@@ -39,6 +39,7 @@ public class Restart : MonoBehaviour
             playerStats.Damage = 1 + playerStats.LevelDamage * 2;
             playerStats.Armor = 1 + playerStats.LevelArmor * 2;
             playerStats.HP = 5 + playerStats.LevelHP * 2;
+            playerStats.Round++;
             player.transform.position = new Vector3(0,0,64);
             roundStart = false;
         }
@@ -59,6 +60,7 @@ public class Restart : MonoBehaviour
             player.transform.position = new Vector3(0, 0, 64);
             playerStats.Gold = 100;
 
+            playerStats.Round = 0;
             playerStats.Damage = 1;
             playerStats.Armor = 1;
             playerStats.HP = 5;
