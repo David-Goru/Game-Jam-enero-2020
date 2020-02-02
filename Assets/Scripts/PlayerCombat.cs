@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
+    public Restart restart;
     public PlayerStats Stats;
     public GameObject BloodParticles;
     float attackTimer = 0;
@@ -47,12 +48,6 @@ public class PlayerCombat : MonoBehaviour
     public void GetDamage(int damage)
     {
         Stats.HP -= damage;  //------------------------------------------------------------------------------------------------------- esto lo ajustamos cuando cuando metamos las animaciones buenas de los modelados
-
-        if (Stats.HP <= 0)
-        {
-            this.gameObject.SetActive(false);
-            Debug.Log("hola");
-        }
 
     }
 }

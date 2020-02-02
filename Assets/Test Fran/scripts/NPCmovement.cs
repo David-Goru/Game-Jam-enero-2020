@@ -108,7 +108,7 @@ public class NPCmovement : MonoBehaviour
 
         if (damage == false)
         {
-            playerCombat.GetDamage(2);
+            playerCombat.GetDamage(1);
             damage = true;
         }
 
