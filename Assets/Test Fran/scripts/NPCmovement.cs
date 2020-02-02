@@ -6,9 +6,9 @@ using UnityEngine.AI;
 public class NPCmovement : MonoBehaviour
 {
     //PlayerStats stats;
-    public PlayerCombat playerCombat;
-    public PlayerHandler playerHandler;
-    public createNPC createNPC;
+    PlayerCombat playerCombat;
+    PlayerHandler playerHandler;
+    createNPC createNPC;
 
     public Animator animator;
     NavMeshAgent navMeshAgent;
@@ -26,11 +26,14 @@ public class NPCmovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        hp = 1 + playerHandler.Stats.Round * 2;
+
+       
         damage = false;
         playerCombat = GameObject.Find("Player").GetComponent<PlayerCombat>();
         playerHandler = GameObject.Find("Player").GetComponent<PlayerHandler>();
         createNPC = GameObject.Find("Floor").GetComponent<createNPC>();
+
+        hp = 1 + playerHandler.Stats.Round * 2;
 
         navMeshAgent = this.GetComponent<NavMeshAgent>();
         if (navMeshAgent == null)

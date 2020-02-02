@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
+    public Animator animator;
     public Restart restart;
     public PlayerStats Stats;
     public GameObject BloodParticles;
@@ -31,6 +32,7 @@ public class PlayerCombat : MonoBehaviour
 
     void Attack()
     {
+        animator.SetTrigger("attack");
         // Run animation
 
         Collider[] enemies = Physics.OverlapSphere(checkEnemies.transform.position, checkEnemies.radius, 1 << LayerMask.NameToLayer("Enemy"));
@@ -38,7 +40,7 @@ public class PlayerCombat : MonoBehaviour
         foreach (Collider enemy in enemies)
         {
             (enemy.gameObject.GetComponent("NPCmovement") as NPCmovement).GetDamage(Stats.Damage);
-            Instantiate(BloodParticles, enemy.transform.Find("Blood spawn").position, enemy.transform.rotation);
+            //Instantiate(BloodParticles, enemy.transform.Find("Blood spawn").position, enemy.transform.rotation);/---------------------------------lo siento david xD
             //enemy.gameObject.GetComponent<Rigidbody>().AddForce(enemy.transform.Find("Back point").position * 10, ForceMode.Impulse);
 
         }

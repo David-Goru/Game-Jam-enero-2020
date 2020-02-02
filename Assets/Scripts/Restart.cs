@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Restart : MonoBehaviour
 {
+    public Animator animatorPlayer;
+
     public PlayerStats playerStats;
     public createNPC createNPC;
     public GameObject player;//------------------------------------no se usa
@@ -49,6 +51,7 @@ public class Restart : MonoBehaviour
     {
         if (playerStats.HP <= 0)
         {
+
             contEnemiesInGame = 0;
             roundStart = false;
             enemiesInScene = GameObject.FindGameObjectsWithTag("Enemy");
@@ -72,6 +75,8 @@ public class Restart : MonoBehaviour
             GameObject.Find("UI").transform.Find("Upgrades").Find("Upgrade damage").Find("Points").GetComponent<Text>().text = string.Format("({0})", playerStats.LevelDamage);
             GameObject.Find("UI").transform.Find("Upgrades").Find("Upgrade armor").Find("Points").GetComponent<Text>().text = string.Format("({0})", playerStats.LevelArmor);
             GameObject.Find("UI").transform.Find("Upgrades").Find("Upgrade HP").Find("Points").GetComponent<Text>().text = string.Format("({0})", playerStats.LevelHP);
+
+            animatorPlayer.SetTrigger("isDead");
 
         }
     }
