@@ -20,11 +20,13 @@ public class NPCmovement : MonoBehaviour
     float variableZ;
 
     bool damage;
+    int hp;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        hp = 1 + playerHandler.Stats.Round * 2;
         damage = false;
         playerCombat = GameObject.Find("Player").GetComponent<PlayerCombat>();
         playerHandler = GameObject.Find("Player").GetComponent<PlayerHandler>();
@@ -85,36 +87,27 @@ public class NPCmovement : MonoBehaviour
 
     public void GetDamage(int damage)
     {
+        hp -= damage;
 
-        /*
-        Stats.HP -= damage;
-
-        if (Stats.HP <= 0)
+        if (hp <= 0)
         {
-            this.gameObject.SetActive(false);
-            Debug.Log("hola");
+            playerHandler.MoreGold();
+            createNPC.DestroyEnemy(1);
+            Destroy(this.gameObject);
         }
-         */
-        playerHandler.MoreGold();
-
-        createNPC.DestroyEnemy(1);
-        Destroy(this.gameObject);
-
     }
-
 
     IEnumerator TimeBetweenDamage()
     {
 
         if (damage == false)
         {
-            playerCombat.GetDamage(1);
+            playerCombat.GetDamage(1 + 3 * playerHandler.Stats.Round);
             damage = true;
         }
 
-        yield return new WaitForSeconds(100);
+        yield return new WaitForSeconds(4);
 
         damage = false;
     }
-
 }

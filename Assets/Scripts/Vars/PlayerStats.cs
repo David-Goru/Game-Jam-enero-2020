@@ -6,6 +6,7 @@ public class PlayerStats : ScriptableObject
     public int Gold;
 
     // Stats
+    public int Round;
     public float Speed;
     public int Damage;
     public int HP;
