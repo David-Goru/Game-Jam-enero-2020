@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08e6095707e1ae24a8208315768a3635, type: 3}
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
-  Gold: 100
-  Speed: 2
+  Gold: 0
+  Speed: 7
   Damage: 0
   DamageCost: 0
-  HP: 10
+  HP: 0
   HPCost: 0
   Armor: 0
   ArmorCost: 0
