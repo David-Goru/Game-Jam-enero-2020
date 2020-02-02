@@ -7,6 +7,7 @@ public class NPCmovement : MonoBehaviour
 {
     //PlayerStats stats;
     public PlayerCombat playerCombat;
+    public PlayerHandler playerHandler;
     public createNPC createNPC;
 
     public Animator animator;
@@ -26,6 +27,7 @@ public class NPCmovement : MonoBehaviour
     {
         damage = false;
         playerCombat = GameObject.Find("Player").GetComponent<PlayerCombat>();
+        playerHandler = GameObject.Find("Player").GetComponent<PlayerHandler>();
         createNPC = GameObject.Find("Floor").GetComponent<createNPC>();
 
         navMeshAgent = this.GetComponent<NavMeshAgent>();
@@ -93,6 +95,8 @@ public class NPCmovement : MonoBehaviour
             Debug.Log("hola");
         }
          */
+        playerHandler.MoreGold();
+
         createNPC.DestroyEnemy(1);
         Destroy(this.gameObject);
 
